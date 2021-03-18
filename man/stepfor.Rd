@@ -7,10 +7,14 @@
 stepfor(y = y, d = d, alpha = 0.05)
 }
 \arguments{
-\item{Takes}{a step-wise forward linear regression}
+\item{y}{dependent variable for selection}
 
-\item{Categorical}{variables are split into columns and assigned value 1 and 0 elsewhere}
+\item{d}{select the independent variables}
 }
 \description{
-stepfor.Rd
+When choosing 'd', and d is a dataframe, then the entire dataframe can be used (look at example), although when this is the case you have to make sure the dependent variable is de-selected
+}
+\examples{
+data(weight)
+stepfor(weight$wgt, weight[, -1], alpha = 0.2)
 }
