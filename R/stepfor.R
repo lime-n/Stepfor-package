@@ -11,16 +11,13 @@ stepfor<-function (y = y, d = d, alpha = 0.05)
   design <- NULL
   j = 1
 
-  #Filter strings such that more than one different type of variable can be included
-  x = Filter(function(x) is.integer(x)|is.numeric(x)|is.factor(x)|is.character(x), d)
-  #split the factors that appear into separate columns with values 1 in appearance and 0 elsewhere
-  x = as.data.frame(Reduce(cbind, lapply(x, function(col) model.matrix(~ . -1, d = data.frame(col)))))
-  #Assign names to numerical values that are lost with the function above
-  names(x)[1:ncol(Filter(is.numeric, d))] <- names(Filter(is.numeric, d))
-  #filter the names for the rest of the values
-  d <- x
-  #assign names
-  setNames(d, sub(pattern = "^col", replacement = "", names(d)))
+  d <- do.call(cbind, unname(Map(function(x, z) {
+    tmp <- as.data.frame(model.matrix(~x -1))
+    if(ncol(tmp) == 1 & class(tmp[[1]]) == 'numeric') {
+      names(tmp) <- paste0(names(tmp), z)}
+    tmp
+  }, d, names(d))))
+  names(d) <- sub('^x', '', names(d))
 
 
   #remove the intercept
