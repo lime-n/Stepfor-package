@@ -1,7 +1,9 @@
 #' @title stepfor.Rd
-#' @param Takes a step-wise forward linear regression
-#' @param Categorical variables are split into columns and assigned value 1 and 0 elsewhere
-#' @examples
+#' @param y dependent variable for selection
+#' @param d select the independent variables
+#' @description When choosing 'd', and d is a dataframe, then the entire dataframe can be used (look at example), although when this is the case you have to make sure the dependent variable is de-selected
+#' @examples data(weight)
+#' @examples stepfor(weight$wgt, weight[, -1], alpha = 0.2)
 #' @export
 stepfor<-function (y = y, d = d, alpha = 0.05)
 {
