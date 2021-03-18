@@ -4,9 +4,10 @@ The following packages allows for Stepforward selection. It allows for numerical
 
 For a description of its use, then use `?stepfor` within the R-package.
 
-Soon, there will be released Stepbackwards selection.
+Soon, there will be released Stepbackwards selection.  
 
-You can load the package, using:
-#install.packages("devtools")
+You can load the package, using:  
+```#install.packages("devtools")
 library(devtools)
-devtools::install_github("
+devtools::install_github("https://github.com/lime-n/Stepfor-package.git")
+```
