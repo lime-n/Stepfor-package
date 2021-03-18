@@ -1,15 +1,9 @@
 Package: stepfor
-Title: What the Package Does (One Line, Title Case)
+Title: Step-wise forward-selection for linear regression 
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+Authors@R: person("Emilton","Mrizaj", "emiljan_mrizaj@icloud.com", role = c("aut", "cre"))
+Description: This package performs a stepford selection on Linear regression models
+Which is useful for fitting a final model.
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
